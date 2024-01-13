@@ -121,7 +121,7 @@
   </rule>
 
   <!-- DEL_GROUP -->
-  <!-- -->
+  <!-- This rule is triggered when a group is deleted from the system. -->
   <rule id="200123" level="0">
     <decoded_as>json</decoded_as>
     <regex>{"ID":"\d+.\d+:\d+","DEL_GROUP</regex>
@@ -130,7 +130,7 @@
   </rule>
 
   <!-- DEL_USER -->
-  <!-- This rule is triggered when a group is deleted from the system. -->
+  <!-- This rule is triggered when a user is deleted from the system. -->
   <rule id="200124" level="0">
     <decoded_as>json</decoded_as>
     <regex>{"ID":"\d+.\d+:\d+","ADD_USER</regex>
