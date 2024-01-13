@@ -2,6 +2,7 @@
 <!-- GROUPING -->
 
   <!-- SYSCALL -->
+  <!-- This rule is triggered when a system call is made. System calls are how a program requests a service from the kernel. -->
   <rule id="200110" level="0">
     <decoded_as>json</decoded_as>
     <regex>{"ID":"\d+.\d+:\d+","SYSCALL</regex>
@@ -10,6 +11,7 @@
   </rule>
 
   <!-- SERVICE START -->
+  <!-- This rule is triggered when a service is started on the system. -->
   <rule id="200111" level="0">
     <decoded_as>json</decoded_as>
     <regex>{"ID":"\d+.\d+:\d+","SERVICE_START</regex>
@@ -18,6 +20,8 @@
   </rule>
 
   <!-- SERVICE STOP -->
+  <!-- This rule is triggered when a service is stopped on the system. -->
+
   <rule id="200112" level="0">
     <decoded_as>json</decoded_as>
     <regex>{"ID":"\d+.\d+:\d+","SERVICE_STOP</regex>
@@ -26,6 +30,8 @@
   </rule>
 
   <!-- USER_ACCT -->
+  <!-- This rule is triggered when a user account is accessed. This could be when a user logs in, or when a user account is modified. -->
+
   <rule id="200113" level="0">
     <decoded_as>json</decoded_as>
     <regex>{"ID":"\d+.\d+:\d+","USER_ACCT</regex>
@@ -34,6 +40,7 @@
   </rule>
 
   <!-- CRED_ACQ -->
+  <!-- This rule is triggered when a process acquires credentials, such as when a user logs in. -->
   <rule id="200114" level="0">
     <decoded_as>json</decoded_as>
     <regex>{"ID":"\d+.\d+:\d+","CRED_ACQ</regex>
@@ -42,6 +49,7 @@
   </rule>
 
   <!-- USER_START -->
+  <!-- This rule is triggered when a user session is started. -->
   <rule id="200115" level="0">
     <decoded_as>json</decoded_as>
     <regex>{"ID":"\d+.\d+:\d+","USER_START</regex>
@@ -50,6 +58,7 @@
   </rule>
 
   <!-- USER_LOGIN -->
+  <!-- This rule is triggered when a user logs in. -->
   <rule id="200116" level="0">
     <decoded_as>json</decoded_as>
     <regex>{"ID":"\d+.\d+:\d+","USER_LOGIN</regex>
@@ -58,6 +67,7 @@
   </rule>
 
   <!-- CRED_REFR -->
+  <!-- This rule is triggered when a process refreshes its credentials, such as when a user changes their password. -->
   <rule id="200117" level="0">
     <decoded_as>json</decoded_as>
     <regex>{"ID":"\d+.\d+:\d+","CRED_REFR</regex>
@@ -66,6 +76,7 @@
   </rule>
 
   <!-- USER_END -->
+  <!-- This rule is triggered when a user session ends. -->
   <rule id="200118" level="0">
     <decoded_as>json</decoded_as>
     <regex>{"ID":"\d+.\d+:\d+","USER_END</regex>
@@ -74,11 +85,75 @@
   </rule>
 
   <!-- CRED_DISP -->
+  <!-- This rule is triggered when a process disposes of its credentials, such as when a user logs out or when a process ends. -->
   <rule id="200119" level="0">
     <decoded_as>json</decoded_as>
     <regex>{"ID":"\d+.\d+:\d+","CRED_DISP</regex>
     <description>Grouping Laurel AuditD CRED DISP</description>
     <group>cred_disp,</group>
+  </rule>
+
+  <!-- BPF -->
+  <!-- This rule is triggered when a Berkeley Packet Filter (BPF) event occurs. BPF is a technology used in Linux for network packet filtering and other tasks. -->
+  <rule id="200120" level="0">
+    <decoded_as>json</decoded_as>
+    <regex>{"ID":"\d+.\d+:\d+","BPF</regex>
+    <description>Grouping Laurel AuditD BERKELEY PACKET FILTER</description>
+    <group>bpf,</group>
+  </rule>
+
+  <!-- ADD_GROUP -->
+  <!-- This rule is triggered when a new group is added to the system. -->
+  <rule id="200121" level="0">
+    <decoded_as>json</decoded_as>
+    <regex>{"ID":"\d+.\d+:\d+","ADD_GROUP</regex>
+    <description>Grouping Laurel AuditD ADD GROUP</description>
+    <group>add_group,</group>
+  </rule>
+
+  <!-- ADD_USER -->
+  <!-- This rule is triggered when a new user is added to the system. -->
+  <rule id="200122" level="0">
+    <decoded_as>json</decoded_as>
+    <regex>{"ID":"\d+.\d+:\d+","ADD_USER</regex>
+    <description>Grouping Laurel AuditD ADD USER</description>
+    <group>add_user,</group>
+  </rule>
+
+  <!-- DEL_GROUP -->
+  <!-- -->
+  <rule id="200123" level="0">
+    <decoded_as>json</decoded_as>
+    <regex>{"ID":"\d+.\d+:\d+","DEL_GROUP</regex>
+    <description>Grouping Laurel AuditD DEL GROUP</description>
+    <group>del_group,</group>
+  </rule>
+
+  <!-- DEL_USER -->
+  <!-- This rule is triggered when a group is deleted from the system. -->
+  <rule id="200124" level="0">
+    <decoded_as>json</decoded_as>
+    <regex>{"ID":"\d+.\d+:\d+","ADD_USER</regex>
+    <description>Grouping Laurel AuditD DEL USER</description>
+    <group>del_user,</group>
+  </rule>
+
+  <!-- CRED_DISP -->
+  <!-- This event is generated when a process disposes of its credentials, such as when it terminates. -->
+  <rule id="200125" level="0">
+    <decoded_as>json</decoded_as>
+    <regex>{"ID":"\d+.\d+:\d+","CRED_DISP</regex>
+    <description>Grouping Laurel AuditD CRED_DISP</description>
+    <group>cred_disp,</group>
+  </rule>
+
+  <!-- ANOM_ABEND -->
+  <!-- This event is generated when a process ends abnormally. This can be useful for identifying crashes or other unexpected behavior. -->
+  <rule id="200126" level="0">
+    <decoded_as>json</decoded_as>
+    <regex>{"ID":"\d+.\d+:\d+","ANOM_ABEND</regex>
+    <description>Grouping Laurel AuditD ANOM_ABEND</description>
+    <group>anom_abend,</group>
   </rule>
 
 </group>
