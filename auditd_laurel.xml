@@ -1,6 +1,8 @@
 <group name="audit,">
+<!-- GROUPING -->
+
   <!-- SYSCALL -->
-  <rule id="200110" level="3">
+  <rule id="200110" level="0">
     <decoded_as>json</decoded_as>
     <regex>{"ID":"\d+.\d+:\d+","SYSCALL</regex>
     <description>Grouping Laurel AuditD SYSCALL</description>
@@ -8,7 +10,7 @@
   </rule>
 
   <!-- SERVICE START -->
-  <rule id="200111" level="3">
+  <rule id="200111" level="0">
     <decoded_as>json</decoded_as>
     <regex>{"ID":"\d+.\d+:\d+","SERVICE_START</regex>
     <description>Grouping Laurel AuditD SERVICE START</description>
@@ -16,7 +18,7 @@
   </rule>
 
   <!-- SERVICE STOP -->
-  <rule id="200112" level="3">
+  <rule id="200112" level="0">
     <decoded_as>json</decoded_as>
     <regex>{"ID":"\d+.\d+:\d+","SERVICE_STOP</regex>
     <description>Grouping Laurel AuditD SERVICE STOP</description>
@@ -24,7 +26,7 @@
   </rule>
 
   <!-- USER_ACCT -->
-  <rule id="200113" level="3">
+  <rule id="200113" level="0">
     <decoded_as>json</decoded_as>
     <regex>{"ID":"\d+.\d+:\d+","USER_ACCT</regex>
     <description>Grouping Laurel AuditD USER ACCT</description>
@@ -32,7 +34,7 @@
   </rule>
 
   <!-- CRED_ACQ -->
-  <rule id="200114" level="3">
+  <rule id="200114" level="0">
     <decoded_as>json</decoded_as>
     <regex>{"ID":"\d+.\d+:\d+","CRED_ACQ</regex>
     <description>Grouping Laurel AuditD CRED ACQ</description>
@@ -40,7 +42,7 @@
   </rule>
 
   <!-- USER_START -->
-  <rule id="200115" level="3">
+  <rule id="200115" level="0">
     <decoded_as>json</decoded_as>
     <regex>{"ID":"\d+.\d+:\d+","USER_START</regex>
     <description>Grouping Laurel AuditD USER START</description>
@@ -48,7 +50,7 @@
   </rule>
 
   <!-- USER_LOGIN -->
-  <rule id="200116" level="3">
+  <rule id="200116" level="0">
     <decoded_as>json</decoded_as>
     <regex>{"ID":"\d+.\d+:\d+","USER_LOGIN</regex>
     <description>Grouping Laurel AuditD USER LOGIN</description>
@@ -56,7 +58,7 @@
   </rule>
 
   <!-- CRED_REFR -->
-  <rule id="200117" level="3">
+  <rule id="200117" level="0">
     <decoded_as>json</decoded_as>
     <regex>{"ID":"\d+.\d+:\d+","CRED_REFR</regex>
     <description>Grouping Laurel AuditD CRED REFR</description>
@@ -64,7 +66,7 @@
   </rule>
 
   <!-- USER_END -->
-  <rule id="200118" level="3">
+  <rule id="200118" level="0">
     <decoded_as>json</decoded_as>
     <regex>{"ID":"\d+.\d+:\d+","USER_END</regex>
     <description>Grouping Laurel AuditD USER END</description>
@@ -72,7 +74,7 @@
   </rule>
 
   <!-- CRED_DISP -->
-  <rule id="200119" level="3">
+  <rule id="200119" level="0">
     <decoded_as>json</decoded_as>
     <regex>{"ID":"\d+.\d+:\d+","CRED_DISP</regex>
     <description>Grouping Laurel AuditD CRED DISP</description>
