@@ -156,4 +156,24 @@
     <group>anom_abend,</group>
   </rule>
 
+
+  <!-- https://github.com/SigmaHQ/sigma/blob/master/rules/linux/auditd/lnx_auditd_alter_bash_profile.yml -->
+  <rule id="200140" level="12">
+  <if_sid>200110</if_sid>
+  <list field="PATH" lookup="address_match_key">etc/lists/bash_profile</list>
+  <description>Detects change of user environment. Adversaries can insert code into these files to gain persistence each time a user logs in or opens a new shell.</description>
+  <mitre>
+    <id>T1546</id>
+  </mitre>
+  <group>path,</group>
+  </rule>
+
+  <!-- https://github.com/SigmaHQ/sigma/blob/master/rules/linux/auditd/lnx_auditd_susp_c2_commands.yml -->
+  <rule id="200178" level="12">
+  <if_sid>200110</if_sid>
+  <field name="SYSCALL.key">susp_activity</field>
+  <description>Detects suspicious activities as declared by Florian Roth in its 'Best Practice Auditd Configuration'. This includes the detection of the following commands; wget, curl, base64, nc, netcat, ncat, ssh, socat, wireshark, rawshark, rdesktop, nmap.</description>
+  <group>syscall,</group>
+  </rule>
+
 </group>

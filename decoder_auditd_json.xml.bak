@@ -1,0 +1,11 @@
+<!--
+<decoder name="audit_laurel">
+  <prematch>auditd-laurel: </prematch>
+  <plugin_decoder offset="after_prematch">JSON_Decoder</plugin_decoder>
+</decoder>
+-->
+<decoder name="audit_laurel_path">
+  <parent>json</parent>
+  <prematch>PATH":[</prematch>
+  <plugin_decoder offset="after_prematch">JSON_Decoder</plugin_decoder>
+</decoder>
